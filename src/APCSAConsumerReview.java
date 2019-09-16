@@ -2,7 +2,8 @@
 public class APCSAConsumerReview {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		double value = Review.sentimentVal("happily");
+		System.out.println(value);
 
 	}
 

@@ -19,7 +19,7 @@ public class Review {
   
   static{
     try {
-      Scanner input = new Scanner(new File("cleanSentiment.csv"));
+      Scanner input = new Scanner(new File("src\\cleanSentiment.csv"));
       while(input.hasNextLine()){
         String[] temp = input.nextLine().split(",");
         sentiment.put(temp[0],Double.parseDouble(temp[1]));
@@ -34,7 +34,7 @@ public class Review {
   
   //read in the positive adjectives in postiveAdjectives.txt
      try {
-      Scanner input = new Scanner(new File("positiveAdjectives.txt"));
+      Scanner input = new Scanner(new File("src\\positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
         System.out.println(temp);
@@ -43,12 +43,12 @@ public class Review {
       input.close();
     }
     catch(Exception e){
-      System.out.println("Error reading or parsing postitiveAdjectives.txt\n" + e);
+      System.out.println("Error reading or parsing positiveAdjectives.txt\n" + e);
     }   
  
   //read in the negative adjectives in negativeAdjectives.txt
      try {
-      Scanner input = new Scanner(new File("negativeAdjectives.txt"));
+      Scanner input = new Scanner(new File("src\\negativeAdjectives.txt"));
       while(input.hasNextLine()){
         negAdjectives.add(input.nextLine().trim());
       }
@@ -149,6 +149,7 @@ public class Review {
 /** Activity 2: totalSentiment()
   * Write the code to total up the sentimentVals of each word in a review.
  */
+  
   public static double totalSentiment(String filename)
   {
     // read in the file contents into a string using the textToString method with the filename
@@ -164,8 +165,8 @@ public class Review {
    
 
 
-
-   return sentimentTotal; 
+	  return 0;
+   //return sentimentTotal; 
   }
 
 
@@ -177,7 +178,7 @@ public class Review {
     // call the totalSentiment method with the fileName
 
     // determine number of stars between 0 and 4 based on totalSentiment value 
-    int stars;
+    int stars = -1;
     // write if statements here
 
 
@@ -185,4 +186,5 @@ public class Review {
     // return number of stars
     return stars; 
   }
+  
 }
