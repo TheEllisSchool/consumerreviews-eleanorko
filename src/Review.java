@@ -34,7 +34,7 @@ public class Review {
   
   //read in the positive adjectives in postiveAdjectives.txt
      try {
-      Scanner input = new Scanner(new File("src\\positiveAdjectives.txt"));
+      Scanner input = new Scanner(new File("src//positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
         System.out.println(temp);
@@ -84,7 +84,8 @@ public class Review {
   }
   
   /**
-   * @returns the sentiment value of word as a number between -1 (very negative) to 1 (very positive sentiment) 
+   * @returns the sentiment value of word as a number between -1 
+   * (very negative) to 1 (very positive sentiment) 
    */
   public static double sentimentVal( String word )
   {
